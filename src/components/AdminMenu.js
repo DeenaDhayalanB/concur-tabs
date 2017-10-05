@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
+import CustomSiteList from './custom_sites/AddCustomSite';
 
 class AdminMenu extends React.Component {
       constructor(props) {
@@ -44,6 +45,7 @@ class AdminMenu extends React.Component {
     }
 
   render() {
+    var sites = JSON.parse(localStorage.getItem('sites')) || [];
     return (
       <div>
         <a onClick={this.onClick.bind(this)} href='#'><i className="fa fa-cog fa-2x"></i></a>
@@ -54,13 +56,27 @@ class AdminMenu extends React.Component {
               <div className="closeMenu" id="close-settings" onClick={this.onClick.bind(this)}>✕</div>
             </div>
             <div className="admin-content">
-              <div className="port-number">
+              <div className="admin-section">
                 <h4 className="text-left">Change your port number</h4>
                 <form className="box-form text-left" onSubmit={this.handleSubmit}>
-                  <input id="box-text-input" type="text" value={this.state.value} ref="boxInput" onChange={this.handleChange} />
-                  <input id="box-submit" type="submit" value="Submit" />
+                  <input className="box-text-input" type="text" value={this.state.value} ref="boxInput" onChange={this.handleChange} />
+                  <input className="box-submit" type="submit" value="Submit" />
                 </form> 
               </div> 
+              <div className="custom-sites">
+                <div className="admin-section">
+                  <h4 className="text-left">Custom Sites</h4>
+                  <CustomSiteList sites={sites}/>
+                </div>
+              </div>
+              <div className="support">
+                <div className="admin-section text-left">
+                  <h4 id="support-title">Support</h4>
+                  <p>
+                    <button className="reset-button">Reset Defaults</button>
+                  </p>
+                </div>
+              </div>
             </div>
           </div> 
         </div>

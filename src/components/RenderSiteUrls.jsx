@@ -191,7 +191,7 @@ class FilterStagingUrls extends Component {
     }
 
     filterList(event) {
-        let value = event.target.value;
+        let value = event.target.value.toLowerCase();
         let setStagingUrls = this.state.setStagingUrls, result=[];
         result = setStagingUrls.filter((setStagingUrls)=>{
             return setStagingUrls.site.toLowerCase().search(value) != -1;
@@ -244,10 +244,10 @@ class FilterProdUrls extends Component {
     }
 
     filterList(event) {
-        let value = event.target.value;
+        let value = event.target.value.toLowerCase();
         let setProdUrls = this.state.setProdUrls, result=[];
         result = setProdUrls.filter((setProdUrls)=>{
-            return setProdUrls.site.search(value) != -1;
+            return setProdUrls.site.toLowerCase().search(value) != -1;
         });
         this.setState({result});
     }

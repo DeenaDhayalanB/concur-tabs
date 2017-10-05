@@ -21,10 +21,15 @@ var CustomSiteList = React.createClass({
 
   add: function() {
     var sites = this.props.sites;
-    sites.push(this.refs.myInput.value);
-    this.refs.myInput.value = "";
-    localStorage.setItem('sites', JSON.stringify(sites));
-    this.setState({ sites: sites });
+
+    if(sites.length <= 5) {
+      sites.push(this.refs.myInput.value);
+      this.refs.myInput.value = "";
+      localStorage.setItem('sites', JSON.stringify(sites));
+      this.setState({ sites: sites });
+    } else {
+      alert('there are only 6 slots to add!')
+    }
   },
 
   done: function(site) {
@@ -37,19 +42,15 @@ var CustomSiteList = React.createClass({
   render: function() {
     return (
       <div>
-        <h1>Custom Sites</h1>
-        <ul>
-        {
-          this.state.sites.map(function(site, id) {
-            return <CustomSiteItem site={site} key={id} done={this.done} />
-          }.bind(this))
-        }
-        </ul>
-        <input type="text" ref="myInput" />
-        <button onClick={this.add}>Add</button>
+        <form className="text-left">
+          <input className="box-text-input" type="text" ref="myInput" />
+          <button className="box-submit" type="submit" onClick={this.add}>Add</button>
+        </form>
       </div>
     );
   }
 });
 
 export default CustomSiteList;
+
+// add custom site
