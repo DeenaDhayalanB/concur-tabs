@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../App.css';
 import CopyToClipboard from 'react-copy-to-clipboard';
+import ReactTooltip from 'react-tooltip'
 
 class CopyColor extends React.Component {
 
@@ -13,12 +14,6 @@ class CopyColor extends React.Component {
      }
   }
 
-  onClick() {
-      this.setState({
-        copied: !this.state.copied
-      })
-    }
-
   render() {
 
     return (
@@ -26,89 +21,132 @@ class CopyColor extends React.Component {
             <div className="row">
                 <div className='col-md-4'>
                     <div className="colorBox">
-                        <p className="bg-concur-light-blue"></p>
-                    </div>                
-                    <CopyToClipboard text="bg-concur-light-blue">
-                        <p onClick={this.onClick.bind(this)}>bg-concur-light-blue</p>
-                    </CopyToClipboard>
                     <CopyToClipboard text="#15b8fe">
-                        <p onClick={this.onClick.bind(this)}>#15b8fe</p>
+                        <p data-tip="Psst.. Click me to copy the hex!" className="bg-concur-light-blue"></p>
                     </CopyToClipboard>
-                    <h4 className={this.state.copied ? 'animated text-center' : ''}>{this.state.copied ? <span style={{color: '#00a9f2'}}>Copied!</span> : null}</h4>
+                    </div>            
+                    <CopyToClipboard text="bg-concur-light-blue">
+                        <p>bg-concur-light-blue</p>
+                    </CopyToClipboard>
                 </div>
                 <div className="col-md-4">
                     <div className="colorBox">
-                        <p className="bg-concur-blue"></p>
+                        <CopyToClipboard text="#00a9f2">
+                            <p data-tip="Psst.. Click me to copy the hex!" className="bg-concur-blue"></p>
+                        </CopyToClipboard>
                     </div>
-                    <p className="colorText">bg-concur-blue</p>
+                    <CopyToClipboard text="bg-concur-blue">
+                        <p className="colorText">bg-concur-blue</p>
+                    </CopyToClipboard>
                 </div>
                 <div className="col-md-4">
                     <div className="colorBox">
-                        <p className="bg-blue-medium"></p>
+                        <CopyToClipboard text="#0078c9">
+                            <p data-tip="Psst.. Click me to copy the hex!" className="bg-blue-medium"></p>
+                        </CopyToClipboard>
                     </div>
-                    <p className="colorText">bg-blue-medium</p>
+                    <CopyToClipboard text="bg-concur-medium">
+                        <p className="colorText">bg-blue-medium</p>
+                    </CopyToClipboard>
                 </div>
             </div>
             <div className="row">
                 <div className="col-md-4">
                     <div className="colorBox">
-                        <p className="bg-concur-darker-blue"></p>
+                        <CopyToClipboard text="#0b59a9">
+                            <p data-tip="Psst.. Click me to copy the hex!" className="bg-concur-darker-blue"></p>
+                        </CopyToClipboard>
                     </div>
-                    <p className="colorText">bg-concur-darker-blue</p>
+                    <CopyToClipboard text="bg-concur-darker-blue">
+                        <p className="colorText">bg-concur-darker-blue</p>
+                    </CopyToClipboard>
                 </div>
                 <div className="col-md-4">
                     <div className="colorBox">
-                        <p className="bg-concur-modified-dark-blue"></p>
+                        <CopyToClipboard text="#014a7d">
+                            <p data-tip="Psst.. Click me to copy the hex!" className="bg-concur-modified-dark-blue"></p>
+                        </CopyToClipboard>
                     </div>
-                    <p className="colorText">bg-concur-modified-dark-blue</p>
+                    <CopyToClipboard text="bg-concur-modified-dark-blue">
+                        <p className="colorText">bg-concur-modified-dark-blue</p>
+                    </CopyToClipboard>
                 </div>
                 <div className="col-md-4">
                     <div className="colorBox">
-                        <p className="bg-blue-dark"></p>
+                        <CopyToClipboard text="#004a7d">
+                            <p data-tip="Psst.. Click me to copy the hex!" className="bg-blue-dark"></p>
+                        </CopyToClipboard>
                     </div>
-                    <p className="colorText"> bg-blue-dark</p>
+                    <CopyToClipboard text="bg-blue-dark">
+                        <p className="colorText"> bg-blue-dark</p>
+                    </CopyToClipboard>
                 </div>
             </div>
             <div className="row">
                 <div className="col-md-4">
                     <div className="colorBox">
-                        <p className="bg-concur-light-green"></p>
+                        <CopyToClipboard text="bg-concur-light-green">
+                            <p data-tip="Psst.. Click me to copy the hex!" className="bg-concur-light-green"></p>
+                        </CopyToClipboard>
                     </div>
-                    <p className="colorText">bg-concur-light-green</p>
+                    <CopyToClipboard text="#89bf42">
+                        <p className="colorText">bg-concur-light-green</p>
+                    </CopyToClipboard>
                 </div>
                 <div className="col-md-4">
                     <div className="colorBox">
-                        <p className="bg-concur-yellow"></p>
+                        <CopyToClipboard text="#f4a900">
+                            <p data-tip="Psst.. Click me to copy the hex!" className="bg-concur-yellow"></p>
+                        </CopyToClipboard>
                     </div>
-                    <p className="colorText">bg-concur-yellow</p>
+                    <CopyToClipboard text="bg-concur-yellow">
+                        <p className="colorText">bg-concur-yellow</p>
+                    </CopyToClipboard>
                 </div>
                 <div className="col-md-4">
                     <div className="colorBox">
-                        <p className="bg-burnt-orange"></p>
+                        <CopyToClipboard text="#d25533">
+                            <p data-tip="Psst.. Click me to copy the hex!" className="bg-burnt-orange"></p>
+                        </CopyToClipboard>
                     </div>
-                    <p className="colorText">bg-burnt-orange</p>
+                    <CopyToClipboard text="bg-burnt-orange">
+                        <p className="colorText">bg-burnt-orange</p>
+                    </CopyToClipboard>
                 </div>
             </div>
             <div className="row">
                 <div className="col-md-4">
                     <div className="colorBox">
-                        <p className="bg-concur-grey"></p>
+                        <CopyToClipboard text="#444">
+                            <p data-tip="Psst.. Click me to copy the hex!" className="bg-concur-grey"></p>
+                        </CopyToClipboard>
                     </div>
-                    <p className="colorText">bg-concur-grey</p>
+                    <CopyToClipboard text="bg-concur-grey">
+                        <p className="colorText">bg-concur-grey</p>
+                    </CopyToClipboard>
                 </div>
                 <div className="col-md-4">
                     <div className="colorBox">
-                        <p className="bg-concur-light-grey"></p>
+                        <CopyToClipboard text="#f0f0f0">
+                            <p data-tip="Psst.. Click me to copy the hex!" className="bg-concur-light-grey"></p>
+                        </CopyToClipboard>
                     </div>
-                    <p className="colorText">bg-concur-light-grey</p>
+                    <CopyToClipboard text="bg-concur-light-grey">
+                        <p className="colorText">bg-concur-light-grey</p>
+                    </CopyToClipboard>
                 </div>
                 <div className="col-md-4">
                     <div className="colorBox">
-                        <p className="bg-concur-md-grey"></p>
+                        <CopyToClipboard text="#f6f6f6">
+                            <p data-tip="Psst.. Click me to copy the hex!" className="bg-concur-md-grey"></p>
+                        </CopyToClipboard>
                     </div>
-                    <p className="colorText">bg-concur-md-grey</p>
+                    <CopyToClipboard text="bg-concur-md-grey">
+                        <p className="colorText">bg-concur-md-grey</p>
+                    </CopyToClipboard>
                 </div>
             </div>
+            <ReactTooltip />
         </div>
     );
   }

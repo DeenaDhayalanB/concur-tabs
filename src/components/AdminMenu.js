@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../App.css';
 import CustomSiteList from './custom_sites/AddCustomSite';
+import SiteListView from './customize-tab/SiteListView';
 
 class AdminMenu extends React.Component {
       constructor(props) {
@@ -67,6 +68,12 @@ class AdminMenu extends React.Component {
                 <div className="admin-section">
                   <h4 className="text-left">Custom Sites</h4>
                   <CustomSiteList sites={sites}/>
+                </div>
+              </div>
+              <div className="customize-tab">
+                <div className="admin-section">
+                  <h4 className="text-left">Customize Your Tab</h4>
+                  <SiteListView />
                 </div>
               </div>
               <div className="support">

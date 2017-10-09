@@ -136,6 +136,15 @@ ul li {
   transition-duration: .5s;
 }
 
+.site-list-view-check .checkbox-wrapper {
+  display: inline-block;
+  color: #ccc;
+}
+.site-list-view-check .checkbox-wrapper:nth-child(2),
+.site-list-view-check .checkbox-wrapper:nth-child(3) {
+  margin-left: 70px;
+}
+
 #support-title {
   padding-bottom: 30px;
 }
