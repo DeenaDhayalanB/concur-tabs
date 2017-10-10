@@ -7,6 +7,9 @@ import RenderStagingList from './RenderSiteUrls';
 import {RenderProdList} from './RenderSiteUrls.jsx';
 import CopyColor from './CopyColor';
 import RenderCustomSite from './custom_sites/RenderCustomSite';
+import Fade from 'react-fade';
+
+const fadeDuration = .3
 
 class MainUi extends React.Component {
   constructor() {
@@ -17,11 +20,28 @@ class MainUi extends React.Component {
     }
   }
 
+  componentDidUpdate(nextProps, { fadeOut }) {
+    if (fadeOut) {
+      setTimeout(() => {
+        this.setState({
+          visibility: 'hidden'
+        })
+      }, fadeDuration)
+    }
+  }
+
   render() {
     var sites = JSON.parse(localStorage.getItem('sites')) || [];
 
     return (
       <div className="main">
+        <Fade
+          out={this.state.fadeOut}
+          duration={fadeDuration}
+          style={{
+            visibility: this.state.visibility
+          }}
+        >
         <div className="main-header">
           <div className="container">
             <div className="col-md-6">
@@ -59,6 +79,7 @@ class MainUi extends React.Component {
             </div>
           </div>
         </div>
+        </Fade>
       </div>
     )
   }

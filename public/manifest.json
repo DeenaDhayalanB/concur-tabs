@@ -1,0 +1,14 @@
+{
+    "manifest_version": 2,
+
+    "name": "Concur Helper Tab",
+    "description": "This has a bunch of nifty little tools all in one place. Get on with dev'ing, whatever it is you're dev'ing and just be glad you never have to remember another port number again!",
+    "version": "1.0",
+    "permissions" : ["management"],
+    "browser_action": {
+        "default_icon": "tripit.png"
+    },
+    "chrome_url_overrides" : {
+        "newtab": "index.html"
+    }
+ }
