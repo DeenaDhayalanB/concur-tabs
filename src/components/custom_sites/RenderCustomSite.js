@@ -39,7 +39,6 @@ class RenderSiteList extends Component {
             localStorage.setItem('sites', JSON.stringify(newState))
             this.setState({siteCondition: newState})
         }
-        
     }
 
     render () {
@@ -48,7 +47,6 @@ class RenderSiteList extends Component {
             var url_pattern = current_url.replace(/https:\/\/|www\.|\.com/gi, "")
 
             current_url[0].toUpperCase();
-            
             
           return <div className="col-md-6">
             <li className={'custom-slots text-center custom-site-slot-'+ i} key={i}>

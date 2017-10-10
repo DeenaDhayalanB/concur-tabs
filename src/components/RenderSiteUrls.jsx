@@ -12,19 +12,28 @@ export class RenderLocalBoxList extends Component {
   constructor(props) {
       super(props);
         this.state = {
-          showLocalList: true
+          showLocalList: false,
+          adminShowLocal: JSON.parse(localStorage.getItem('showLocal'))
         }
       }
+
+    componentDidMount () {
+      if(this.state.adminShowLocal === false) {
+        this.setState({
+          showLocalList: true
+        })
+      }
+    }
 
     onClick(e) {
       e.preventDefault();
       this.setState({
-        showLocalList: !this.state.showLocalList
+        showLocalList: !this.state.showLocalList,
       })
     }
 
     render () {
-      
+
       return (
         <div className="local-wrapper">
           <h3>Local Sites  <a onClick={this.onClick.bind(this)} href='#'>

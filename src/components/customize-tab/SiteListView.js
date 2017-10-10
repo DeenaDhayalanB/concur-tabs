@@ -11,15 +11,21 @@ class SiteListView extends Component {
       this.state = {
         localChecked: false,
         stagingChecked: false,
-        prodChecked: false
+        prodChecked: false,
       }
+
+      this.toggleLocal = this.toggleLocal.bind(this);
         
     }
 
     toggleLocal = () => {
+      var newState = 
+
       this.setState({
         localChecked: !this.state.localChecked,
       })
+      console.log(this.state.localChecked)
+      localStorage.setItem('showLocal', JSON.stringify(this.state.localChecked))
     }
 
     toggleStaging = () => {
@@ -38,7 +44,7 @@ class SiteListView extends Component {
 
         return (
           <div>
-            <div className="site-list-view-check text-left">          
+            <div className="site-list-view-check text-left">
               <div className="checkbox-wrapper">
                 <p>Show Local</p>
                 <input type="checkbox"
