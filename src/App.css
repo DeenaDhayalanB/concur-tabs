@@ -282,11 +282,16 @@ ul li {
   background: rgba(0,0,0,0.7);
   background: rgba(0,0,0,0.7);
   position: relative;
-  padding: 30px;
   margin-bottom: 25px;
   border-radius: 5px;
   color: #fff;
 }
+
+.custom-slots a {
+  padding: 30px 85px;
+  display:inline-block;
+}
+
 .custom-slots:hover {
   transform: scale(1.1);
   transition-duration: 0.3s;

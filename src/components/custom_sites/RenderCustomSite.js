@@ -17,7 +17,7 @@ class RenderSiteList extends Component {
             }
           } else {
             this.state = {
-              siteCondition : ["www.concur.com"],
+              siteCondition : ["www.add_a_site.com"],
               valueOne: 'something'
             }
           }
@@ -51,7 +51,7 @@ class RenderSiteList extends Component {
           return <div className="col-md-6">
             <li className={'custom-slots text-center custom-site-slot-'+ i} key={i}>
                 <p className="remove-site" onClick={this.removeSite.bind(this, sites)}>X</p>
-                <p><a href={this.state.siteCondition[i]}>{url_pattern}</a></p>
+                <a href={this.state.siteCondition[i]}>{url_pattern}</a>
             </li>
           </div>;
         });

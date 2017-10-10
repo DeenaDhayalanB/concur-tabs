@@ -5,6 +5,9 @@
     "description": "This has a bunch of nifty little tools all in one place. Get on with dev'ing, whatever it is you're dev'ing and just be glad you never have to remember another port number again!",
     "version": "1.0",
     "permissions" : ["management"],
+    "page_action": {
+        "default_title": "Concur Tabs"
+    },
     "browser_action": {
         "default_icon": "tripit.png"
     },

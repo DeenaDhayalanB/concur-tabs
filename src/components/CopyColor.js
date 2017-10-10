@@ -26,7 +26,7 @@ class CopyColor extends React.Component {
                     </CopyToClipboard>
                     </div>            
                     <CopyToClipboard text="bg-concur-light-blue">
-                        <p>bg-concur-light-blue</p>
+                        <p data-tip="Click me to copy the css class!" className="colorText">bg-concur-light-blue</p>
                     </CopyToClipboard>
                 </div>
                 <div className="col-md-4">
@@ -36,7 +36,7 @@ class CopyColor extends React.Component {
                         </CopyToClipboard>
                     </div>
                     <CopyToClipboard text="bg-concur-blue">
-                        <p className="colorText">bg-concur-blue</p>
+                        <p data-tip="Click me to copy the css class!" className="colorText">bg-concur-blue</p>
                     </CopyToClipboard>
                 </div>
                 <div className="col-md-4">
@@ -46,7 +46,7 @@ class CopyColor extends React.Component {
                         </CopyToClipboard>
                     </div>
                     <CopyToClipboard text="bg-concur-medium">
-                        <p className="colorText">bg-blue-medium</p>
+                        <p data-tip="Click me to copy the css class!" className="colorText">bg-blue-medium</p>
                     </CopyToClipboard>
                 </div>
             </div>
@@ -58,7 +58,7 @@ class CopyColor extends React.Component {
                         </CopyToClipboard>
                     </div>
                     <CopyToClipboard text="bg-concur-darker-blue">
-                        <p className="colorText">bg-concur-darker-blue</p>
+                        <p data-tip="Click me to copy the css class!" className="colorText">bg-concur-darker-blue</p>
                     </CopyToClipboard>
                 </div>
                 <div className="col-md-4">
@@ -68,7 +68,7 @@ class CopyColor extends React.Component {
                         </CopyToClipboard>
                     </div>
                     <CopyToClipboard text="bg-concur-modified-dark-blue">
-                        <p className="colorText">bg-concur-modified-dark-blue</p>
+                        <p data-tip="Click me to copy the css class!" className="colorText">bg-concur-modified-dark-blue</p>
                     </CopyToClipboard>
                 </div>
                 <div className="col-md-4">
@@ -78,7 +78,7 @@ class CopyColor extends React.Component {
                         </CopyToClipboard>
                     </div>
                     <CopyToClipboard text="bg-blue-dark">
-                        <p className="colorText"> bg-blue-dark</p>
+                        <p data-tip="Click me to copy the css class!" className="colorText"> bg-blue-dark</p>
                     </CopyToClipboard>
                 </div>
             </div>
@@ -90,7 +90,7 @@ class CopyColor extends React.Component {
                         </CopyToClipboard>
                     </div>
                     <CopyToClipboard text="#89bf42">
-                        <p className="colorText">bg-concur-light-green</p>
+                        <p data-tip="Click me to copy the css class!" className="colorText">bg-concur-light-green</p>
                     </CopyToClipboard>
                 </div>
                 <div className="col-md-4">
@@ -100,7 +100,7 @@ class CopyColor extends React.Component {
                         </CopyToClipboard>
                     </div>
                     <CopyToClipboard text="bg-concur-yellow">
-                        <p className="colorText">bg-concur-yellow</p>
+                        <p data-tip="Click me to copy the css class!" className="colorText">bg-concur-yellow</p>
                     </CopyToClipboard>
                 </div>
                 <div className="col-md-4">
@@ -110,7 +110,7 @@ class CopyColor extends React.Component {
                         </CopyToClipboard>
                     </div>
                     <CopyToClipboard text="bg-burnt-orange">
-                        <p className="colorText">bg-burnt-orange</p>
+                        <p data-tip="Click me to copy the css class!" className="colorText">bg-burnt-orange</p>
                     </CopyToClipboard>
                 </div>
             </div>
@@ -122,7 +122,7 @@ class CopyColor extends React.Component {
                         </CopyToClipboard>
                     </div>
                     <CopyToClipboard text="bg-concur-grey">
-                        <p className="colorText">bg-concur-grey</p>
+                        <p data-tip="Click me to copy the css class!" className="colorText">bg-concur-grey</p>
                     </CopyToClipboard>
                 </div>
                 <div className="col-md-4">
@@ -132,7 +132,7 @@ class CopyColor extends React.Component {
                         </CopyToClipboard>
                     </div>
                     <CopyToClipboard text="bg-concur-light-grey">
-                        <p className="colorText">bg-concur-light-grey</p>
+                        <p data-tip="Click me to copy the css class!" className="colorText">bg-concur-light-grey</p>
                     </CopyToClipboard>
                 </div>
                 <div className="col-md-4">
@@ -142,7 +142,7 @@ class CopyColor extends React.Component {
                         </CopyToClipboard>
                     </div>
                     <CopyToClipboard text="bg-concur-md-grey">
-                        <p className="colorText">bg-concur-md-grey</p>
+                        <p data-tip="Click me to copy the css class!" className="colorText">bg-concur-md-grey</p>
                     </CopyToClipboard>
                 </div>
             </div>
