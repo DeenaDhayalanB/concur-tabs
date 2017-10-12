@@ -17,7 +17,7 @@ class RenderSiteList extends Component {
             }
           } else {
             this.state = {
-              siteCondition : ["www.add_a_site.com"],
+              siteCondition : ["www.Add_A_Site.com"],
               valueOne: 'something'
             }
           }

@@ -15,11 +15,12 @@ class SiteListView extends Component {
       }
 
       this.toggleLocal = this.toggleLocal.bind(this);
+      this.toggleStaging = this.toggleStaging.bind(this);
+      this.toggleProd = this.toggleProd.bind(this);
         
     }
 
     toggleLocal = () => {
-      var newState = 
 
       this.setState({
         localChecked: !this.state.localChecked,
@@ -29,15 +30,21 @@ class SiteListView extends Component {
     }
 
     toggleStaging = () => {
+
       this.setState({
         stagingChecked: !this.state.stagingChecked,
       })
+      console.log(this.state.stagingChecked)
+      localStorage.setItem('showStaging', JSON.stringify(this.state.stagingChecked))
     }
 
     toggleProd = () => {
+
       this.setState({
         prodChecked: !this.state.prodChecked,
       })
+      console.log(this.state.prodChecked)
+      localStorage.setItem('showProd', JSON.stringify(this.state.prodChecked))
     }
 
     render () {
@@ -58,6 +65,7 @@ class SiteListView extends Component {
                 <input type="checkbox"
                   checked={this.state.stagingChecked}
                   onChange={this.toggleStaging}
+                  className={this.state.stagingChecked ? 'on' : 'off'}
                 />
               </div>
               <div className="checkbox-wrapper">
@@ -65,6 +73,7 @@ class SiteListView extends Component {
                 <input type="checkbox"
                   checked={this.state.prodChecked}
                   onChange={this.toggleProd}
+                  className={this.state.prodChecked ? 'on' : 'off'}
                 />
               </div>
             </div>

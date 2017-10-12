@@ -4,18 +4,17 @@ import CustomSiteList from './custom_sites/AddCustomSite';
 import SiteListView from './customize-tab/SiteListView';
 
 class AdminMenu extends React.Component {
-      constructor(props) {
+      constructor (props) {
       super(props);
 
       if(localStorage.getItem('boxNumber')) {
         this.state = {
           closeAdminMenu: false,
+          showAdminMenu: false,
           boxCondition : JSON.parse(localStorage.getItem('boxNumber')),
-          showAdminMenu: false
         }
       } else {
         this.state = {
-          value1: 'no state set',
           closeAdminMenu: false,
           showAdminMenu: false
         }
@@ -25,7 +24,7 @@ class AdminMenu extends React.Component {
       this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    onClick(e){
+    onClick (e){
       e.preventDefault();
       this.setState({
         closeAdminMenu: !this.state.closeAdminMenu,
@@ -33,19 +32,22 @@ class AdminMenu extends React.Component {
       })
     }
 
-    handleChange(event) {
+    resetDefaults () {
+      localStorage.clear();
+    }
+
+    handleChange (event) {
       this.setState({ value: event.target.value }, function () {
         localStorage.setItem('boxNumber', JSON.stringify(this.state)); 
       });
     } 
 
-    handleSubmit(event) {
-      // event.preventDefault();
+    handleSubmit (event) {
       alert('You have successfully changed your box to: ' + this.state.value);
       document.getElementByClassName('.local-wrapper a').href = this.state.value;      
     }
 
-  render() {
+  render () {
     var sites = JSON.parse(localStorage.getItem('sites')) || [];
     return (
       <div>
@@ -80,7 +82,7 @@ class AdminMenu extends React.Component {
                 <div className="admin-section text-left">
                   <h4 id="support-title">Support</h4>
                   <p>
-                    <button className="reset-button">Reset Defaults</button>
+                    <button className="reset-button" onClick={this.resetDefaults}>Reset Defaults</button>
                   </p>
                 </div>
               </div>

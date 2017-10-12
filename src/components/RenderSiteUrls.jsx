@@ -30,10 +30,11 @@ export class RenderLocalBoxList extends Component {
       this.setState({
         showLocalList: !this.state.showLocalList,
       })
+      localStorage.setItem('showLocal', JSON.stringify(this.state.showLocalList))
     }
 
     render () {
-
+      console.log(this.state.showLocalList)
       return (
         <div className="local-wrapper">
           <h3>Local Sites  <a onClick={this.onClick.bind(this)} href='#'>
@@ -53,15 +54,25 @@ export class RenderStagingList extends Component {
   constructor(props) {
       super(props);
         this.state = {
-          showStagingList: false
+          showStagingList: false,
+          adminShowStaging: JSON.parse(localStorage.getItem('showStaging'))
         }
       }
+
+    componentDidMount () {
+      if(this.state.adminShowStaging === false) {
+        this.setState({
+          showStagingList: true
+        })
+      }
+    }
 
     onClick(e) {
       e.preventDefault();
       this.setState({
         showStagingList: !this.state.showStagingList
       })
+      localStorage.setItem('showStaging', JSON.stringify(this.state.showStagingList))
     }
 
     render () {
@@ -83,17 +94,27 @@ export class RenderStagingList extends Component {
 export class RenderProdList extends Component {
 
   constructor(props) {
-      super(props);
-        this.state = {
-          showProdList: false
-        }
+    super(props);
+      this.state = {
+        showProdList: false,
+        adminShowProd: JSON.parse(localStorage.getItem('showProd'))
       }
+    }
+
+    componentDidMount () {
+      if(this.state.adminShowProd === false) {
+        this.setState({
+          showProdList: true
+        })
+      }
+    }
 
     onClick(e) {
       e.preventDefault();
       this.setState({
         showProdList: !this.state.showProdList
       })
+      localStorage.setItem('showProd', JSON.stringify(this.state.showProdList))
     }
 
     render () {
